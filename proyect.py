@@ -1,22 +1,16 @@
 import parte1 as p1
 
 def printParte1():
-    print("Transmission 1: ")
-    print("mcode1: ")
-    p1.analyze_files('./texts/transmission1.txt','./texts/mcode1.txt')
-    print("mcode2: ")
-    p1.analyze_files('./texts/transmission1.txt','./texts/mcode2.txt')
-    print("mcode2: ")
-    p1.analyze_files('./texts/transmission1.txt','./texts/mcode3.txt')
-    
-    print(" ")
-    print("Transmission 2: ")
-    print("mcode1: ")
-    p1.analyze_files('./texts/transmission2.txt','./texts/mcode1.txt')
-    print("mcode2: ")
-    p1.analyze_files('./texts/transmission2.txt','./texts/mcode2.txt')
-    print("mcode3: ")
-    p1.analyze_files('./texts/transmission2.txt','./texts/mcode3.txt')
+    transmissions = ['./texts/transmission1.txt', './texts/transmission2.txt']
+    mcodes = ['./texts/mcode1.txt', './texts/mcode2.txt', './texts/mcode3.txt']
+
+    # Analizar cada archivo de transmisión
+    for i, trans in enumerate(transmissions, start=1):
+        print(f"Transmission {i}: ")
+        for j, mcode in enumerate(mcodes, start=1):
+            print(f"mcode{j}: ")
+            p1.analyze_files(trans, mcode)
+        print(" ")
 
 def main():
     printParte1()
